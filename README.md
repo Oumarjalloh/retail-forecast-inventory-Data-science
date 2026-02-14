@@ -6,7 +6,6 @@ Projet **Data Science + Engineering** end-to-end pour le retail :
 - **Module “reco stock”** : niveau de stock recommandé selon **service level**
 - **API FastAPI** : renvoie forecast + intervalle + recommandation stock
 - **Dashboard Streamlit** : vision “Supply” (forecast, risque de rupture, produits à risque)
-- **Optionnel** : Docker (API + Dashboard) + script Windows `run.bat` (1 commande)
 
 ---
 
