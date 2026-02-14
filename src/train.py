@@ -1,6 +1,9 @@
 import pandas as pd
 import numpy as np
+import warnings
 
+from statsmodels.tools.sm_exceptions import ConvergenceWarning
+warnings.simplefilter("ignore", ConvergenceWarning)
 from src.config import DATA_PROCESSED, MODELS_DIR, REPORTS_DIR
 from src.features.build_features import add_lag_features, select_features
 from src.backtest.rolling_cv import rolling_splits
@@ -9,7 +12,7 @@ from src.models.baseline_ma import predict_ma
 from src.models.arima_sarimax import predict_sarimax
 from src.models.lgbm_model import LGBMForecaster
 
-def pick_top_series(df, top_n=50):
+def pick_top_series(df, top_n=10):
     # choisir les top séries par volume (plus rapide)
     agg = df.groupby(["store_id","item_id"])["y"].sum().sort_values(ascending=False)
     top = agg.head(top_n).reset_index()[["store_id","item_id"]]

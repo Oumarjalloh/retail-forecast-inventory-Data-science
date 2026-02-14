@@ -1,0 +1,1 @@
+{"lgbm_smape_valid":10.3562,"lgbm_wape_valid":10.5568,"residual_std":1004.1526019184,"feature_cols":["promo","is_holiday","oil_price","dow","week","month","year","is_weekend","lag_7","lag_14","lag_28","roll_mean_7","roll_mean_28","roll_std_28"]}
